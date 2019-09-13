@@ -27,7 +27,9 @@
             <div class="col-md-12">
                 <h2>General News</h2>
                 <br>
+                
             </div>
+            {{macro.displaySourceList(general)}}
 
         </div>
         <hr>
@@ -36,7 +38,7 @@
                 <h2>Business News</h2>
                 <br>
             </div>
-
+            {{macro.displaySourceList(business)}}
         </div>
         <hr>
         <div class="row" id="second">
@@ -44,7 +46,7 @@
                 <h2>Entertainment News</h2>
                 <br>
             </div>
-
+            {{macro.displaySourceList(entertainment)}}
         </div>
         <hr>
         <div class="row" id="third">
@@ -52,7 +54,7 @@
                 <h2>Sports News</h2>
                 <br>
             </div>
-
+            {{macro.displaySourceList(sport)}}
         </div>
         <hr>
         <div class="row" id="fourth">
@@ -60,14 +62,14 @@
                 <h2>Technology News</h2>
                 <br>
             </div>
-
+            {{macro.displaySourceList(tecnology)}}
         </div>
         <div class="row" id="fifth">
             <div class="col-md-12">
                 <h2>Health News</h2>
                 <br>
             </div>
-
+            {{macro.displaySourceList(health)}}
         </div>
     </div>
     {% endblock%}
