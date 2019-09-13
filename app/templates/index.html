@@ -1,1 +1,73 @@
-<h1> Hello World </h1>
+<!-- <h1> Hello World </h1> -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    {% if title %}
+    <title> {{ title }}</title>
+    {% else %}
+    <title> News Highlight Website </title>
+    {% endif %}
+</head>
+
+<body>
+    {% block content %}
+    <div class="container">
+        <div class="row" id="top">
+            <div class="col-md-12 heading">
+                <h1>News Highlights</h1>
+            </div>
+        </div>
+        <hr>
+        <div class="row">
+            <div class="col-md-12">
+                <h2>General News</h2>
+                <br>
+            </div>
+            {{macro.displaySourceList(general)}}
+        </div>
+        <hr>
+        <div class="row" id="first">
+            <div class="col-md-12">
+                <h2>Business News</h2>
+                <br>
+            </div>
+            {{macro.displaySourceList(business)}}
+        </div>
+        <hr>
+        <div class="row" id="second">
+            <div class="col-md-12">
+                <h2>Entertainment News</h2>
+                <br>
+            </div>
+            {{macro.displaySourceList(entertainment)}}
+        </div>
+        <hr>
+        <div class="row" id="third">
+            <div class="col-md-12">
+                <h2>Sports News</h2>
+                <br>
+            </div>
+            {{macro.displaySourceList(sports)}}
+        </div>
+        <hr>
+        <div class="row" id="fourth">
+            <div class="col-md-12">
+                <h2>Technology News</h2>
+                <br>
+            </div>
+            {{macro.displaySourceList(technology)}}
+        </div>
+        <div class="row" id="fifth">
+            <div class="col-md-12">
+                <h2>Health News</h2>
+                <br>
+            </div>
+            {{macro.displaySourceList(health)}}
+        </div>
+    </div>
+    {% endblock%}
+</body>
+
+</html>

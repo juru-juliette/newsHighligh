@@ -8,12 +8,7 @@ from ..models import Review
 from .requests import get_source
  # Views
 @main.route('/')
-def index():
 
-    '''
-    View root page function that returns the index page and its data
-    '''
-    return render_template('index.html')
 def index():
     '''
     view root page function that returns the index page and its data
@@ -23,6 +18,7 @@ def index():
     Sports_category=get_source("sports")
     Entertainment_category=get_source("entertainment")
     Technology_category=get_source("technology")
+    Health_category=get_source("health")
 
     title='News Highlight Website'
-    return render_template('index.html',title=title,general=General_cat,business=Business_cat,sports=Sports_cat,entertainment=Entertainment_cat,technology=Technology_cat)
+    return render_template('index.html',title=title,general=General_category,business=Business_category,sports=Sports_category,entertainment=Entertainment_category,technology=Technology_category)
