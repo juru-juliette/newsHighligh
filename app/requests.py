@@ -2,6 +2,7 @@
 # from app import main
 import urllib.request,json
 from .models import Source
+from .article import article
 # Getting api key
 api_key = None
 # Getting the news base url
@@ -13,6 +14,7 @@ def configure_request(app):
     api_key=app.config['SOURCE_API_KEY']
     print(api_key)
     base_url=app.config['SOURCE_API_BASE_URL']
+    article_url=app.config['ARTICLE_API_BASE_URL']
 def get_source(category):
     '''
     Function that gets the json response to url request
@@ -69,8 +71,8 @@ def get_article(id)
 
         article_results= None
         if get_article_response ['articles']:
-            article_results_list= get_source_response['articles']
-            article_results = process_results(article_results_list)
+            article_results_list= get_article_response['articles']
+            article_results = receive_results(article_results_list)
 
     return source_results
 def receive_result(article_list):
