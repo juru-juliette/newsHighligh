@@ -3,43 +3,43 @@ class News:
     Movie class to define Movie Objects
     '''
 
-    def __init__(self,id,name,description,url,category,language,country):
+    def __init__(self,id,name,description):
         self.id =id
         self.name = name
         self.description = description
-        self.url = "https://image.tmdb.org/t/p/w500/" + poster
-        self.category = category
-        self.language = language
-        self.country = country
+        # self.url = "https://image.tmdb.org/t/p/w500/" + poster
+        # self.category = category
+        # self.language = language
+        # self.country = country
 
 
 
-class Review:
+# class Review:
 
-    all_reviews = []
+#     all_reviews = []
 
-    def __init__(self,news_id,name,imageurl,review):
-        self.news_id = movie_id
-        self.title = title
-        self.imageurl = imageurl
-        self.review = review
-
-
-    def save_review(self):
-        Review.all_reviews.append(self)
+#     def __init__(self,news_id,name,imageurl,review):
+#         self.news_id = movie_id
+#         self.title = title
+#         self.imageurl = imageurl
+#         self.review = review
 
 
-    @classmethod
-    def clear_reviews(cls):
-        Review.all_reviews.clear()
+#     def save_review(self):
+#         Review.all_reviews.append(self)
 
-    @classmethod
-    def get_reviews(cls,id):
 
-        response = []
+#     @classmethod
+#     def clear_reviews(cls):
+#         Review.all_reviews.clear()
 
-        for review in cls.all_reviews:
-            if review.news_id == id:
-                response.append(review)
+#     @classmethod
+#     def get_reviews(cls,id):
 
-        return response
+#         response = []
+
+#         for review in cls.all_reviews:
+#             if review.news_id == id:
+#                 response.append(review)
+
+#         return response
