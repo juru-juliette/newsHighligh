@@ -1,16 +1,19 @@
-import unittest
-from app.models import News
+# import unittest
+# from models import source
+# Source = source.Source
 
-class NewsTest(unittest.TestCase):
-    '''
-    Test Class to test the behaviour of the Movie class
-    '''
+# class SourceTest(unittest.TestCase):
+#     '''
+#     Test class to test the behaviour of the Source class
+#     '''
+#     def setUp(self):
+#         '''
+#         set up method that will run before every Test
+#         '''
+#         self.new_source=Source('The-new-journal','Innovation technology','Find live scores, player and team news,news about health, videos, rumors')
 
-    def setUp(self):
-        '''
-        Set up method that will run before every Test
-        '''
-        self.new_news = News(1234,'Python Must Be Crazy','A thrilling new Python Series','/khsjha27hbs',8.5,129993)
+#     def test_instance(self):
+#         self.assertTrue(isinstance(self.new_source,Source))
 
-    def test_instance(self):
-        self.assertTrue(isinstance(self.new_news,News))
+# if __name__ == '__main__':
+#     unittest.main()

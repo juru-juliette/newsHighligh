@@ -1,24 +1,19 @@
-# import urllib.request,json
-# from .models import Movie
-# # Getting api key
-# api_key = None
-# # Getting the movie base url
-# base_url = None
 
-# def configure_request(app):
-#     global api_key,base_url
-#     api_key = app.config['NEWS_API_KEY']
-#     base_url = app.config['NEWS_API_BASE_URL']
-from app import main
+# from app import main
 import urllib.request,json
-from .models import News
-
-Source=source.Source
+from .models import Source
 # Getting api key
-api_key=app.config['SOURCE_API_KEY']
+api_key = None
 # Getting the news base url
-base_url=app.config['SOURCE_API_BASE_URL']
-    def get_source(category):
+base_url =  None
+
+# Source=source.Source
+def configure_request(app):
+    global api_key, base_url
+    api_key=app.config['SOURCE_API_KEY']
+    print(api_key)
+    base_url=app.config['SOURCE_API_BASE_URL']
+def get_source(category):
     '''
     Function that gets the json response to url request
     '''
@@ -35,12 +30,12 @@ base_url=app.config['SOURCE_API_BASE_URL']
         #     source_results_list=get_source_response['sources']
 
         if get_source_response ['sources']:
-            source_results_list=get_source_response['sources']
-            source_results= process_results(source_results_list)
+            source_results_list= get_source_response['sources']
+            source_results = process_results(source_results_list)
 
     return source_results
 
-    def process_results(source_list):
+def process_results(source_list):
     '''            
     Function  that processes the source result and transform them to a list of Objects
 
@@ -57,8 +52,8 @@ base_url=app.config['SOURCE_API_BASE_URL']
         description=source.get('description')
 
         if  id:
-            source_Object = Source(id,name,description)
-            source_results.append(source_Object)  
+            source_object = Source(id,name,description)
+            source_results.append(source_object)  
 
     return source_results    
 
