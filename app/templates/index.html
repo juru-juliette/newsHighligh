@@ -1,4 +1,7 @@
 <!-- <h1> Hello World </h1> -->
+
+{% extends 'base.html'%}
+{% import 'macros.html' as macro%}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -12,7 +15,7 @@
 </head>
 
 <body>
-    <!-- {% block content %}
+    {% block content %}
     <div class="container">
         <div class="row" id="top">
             <div class="col-md-12 heading">
@@ -24,16 +27,16 @@
             <div class="col-md-12">
                 <h2>General News</h2>
                 <br>
-            </div> -->
-    
-    <!-- </div>
+            </div>
+
+        </div>
         <hr>
         <div class="row" id="first">
             <div class="col-md-12">
                 <h2>Business News</h2>
                 <br>
             </div>
-            
+
         </div>
         <hr>
         <div class="row" id="second">
@@ -41,39 +44,43 @@
                 <h2>Entertainment News</h2>
                 <br>
             </div>
-            
+
         </div>
         <hr>
         <div class="row" id="third">
             <div class="col-md-12">
                 <h2>Sports News</h2>
                 <br>
-            </div> -->
+            </div>
 
-    <!-- </div>
+        </div>
         <hr>
         <div class="row" id="fourth">
             <div class="col-md-12">
                 <h2>Technology News</h2>
                 <br>
             </div>
-        
+
         </div>
         <div class="row" id="fifth">
             <div class="col-md-12">
                 <h2>Health News</h2>
                 <br>
             </div>
-            
+
         </div>
-    </div> -->
-    <!-- {% endblock%} -->
+    </div>
+    {% endblock%}
     <h1>NEWS</h1>
     <ul>
         {% for source in general %}
-        <li><h2>Name:{{ source.name}}</li></h2>
+        <li>
+            <h2>Name:{{ source.name}}
+        </li>
+        </h2>
         <li>Id:{{ source.id}}</li>
         <li>Description:{{ source.description}}</li>
+        <li><a href="{{ source.url}}">url</a></li>
         {% endfor %}
     </ul>
 </body>

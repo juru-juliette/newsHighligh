@@ -12,18 +12,18 @@
     <!-- Poster background -->
    
         <div class="row" id="top">
-            <div class="col-md-12 heading">
+            <div class="col-md-12 ">
                 <h1>News Articles</h1>
             </div>
         </div>
         {% for news in article %}
 
-        <div class="" col-md-6>
+        <div class="col-md-6" >
             <img src="{{news.urlToImage}}" alt="urlToImage">
             <h2>written by:{{news.author}}</h2>
             <h3>description:{{news.description }}</h3>
             <h4>published on:{{news.publishedAt}}</h4>
-            <h5><a href={{news.url}}>Read Full Article</h5>
+            <h5><a href="{{news.url}}">Read Full Article</h5>
         </div>
 
 
