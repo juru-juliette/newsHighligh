@@ -18,7 +18,7 @@ class Review:
 
     all_reviews = []
 
-    def __init__(self,news_id,title,imageurl,review):
+    def __init__(self,news_id,name,imageurl,review):
         self.news_id = movie_id
         self.title = title
         self.imageurl = imageurl
