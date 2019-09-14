@@ -1,32 +1,19 @@
-<!-- {% macro displayNewsList(news_list) %}
-<div class="row">
-    {% for news in news_list%}
-    <div class="one">
-        <p>
-            {{ news.description }}
-        </p>
-        <li class="text-center">
-            <a href="/news/{{news.id}}">
-            <a href="{{url_for('main.article', id=news.id)}}">
-                {{ news.name|truncate(10)}}</a>
-        </li>
-        <li>{{ news.name}}</li>
-    </div>
-    {% endfor %}
-</div>
-{% endmacro %} -->
 {% macro displaySourceList(source_list) %}
-
 {% for source in source_list %}
 <div class="one">
     <div class="row">
-    <div class="col-md-5"> <h3>{{ source.name}}</h3></div>
-    <div class="col-md-5">  <p>{{source.description}}</p>
-        <a href='/article/{{source.id}}'>Read Article</a></div>
+        <div class="col-md-5">
+            <h3>{{ source.name}}</h3>
+        </div>
+        <div class="col-md-5">
+            <p>{{source.description|truncate(150)}}</p>
+            <!-- <a href="/article/{{source.id}}">Read Article</a> -->
+            <a href="{{source.url}}">Read Article</a>
+        </div>
+    </div>
+
+
 </div>
-   
-  
-</div>    
 
 {% endfor %}
 

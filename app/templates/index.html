@@ -64,15 +64,9 @@
             </div>
             {{macro.displaySourceList(tecnology)}}
         </div>
-        <div class="row" id="fifth">
-            <div class="col-md-12">
-                <h2>Health News</h2>
-                <br>
-            </div>
-            {{macro.displaySourceList(health)}}
-        </div>
+        {% endblock%}
     </div>
-    {% endblock%}
+ 
     <h1>NEWS</h1>
     <ul>
         {% for source in general %}
@@ -82,7 +76,7 @@
         </h2>
         <li>Id:{{ source.id}}</li>
         <li>Description:{{ source.description}}</li>
-        <li><a href="{{ source.url}}">url</a></li>
+        <li><a href="{{source.url}}">url</a></li> 
         {% endfor %}
     </ul>
 </body>

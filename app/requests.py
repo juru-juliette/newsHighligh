@@ -62,20 +62,22 @@ def process_results(source_list):
 
 def get_article(id):
     '''
-    Function that gets the json response to url request
+    function that gets json request to the url
     '''
-    get_article_url= article_url.format(id,api_key)
+    get_article_url = article_url.format(id,api_key)
 
-    with urllib.request.urlopen(get_article_url) as url:
+    with urllib.request.urlopen(get_article_url)as url:
         get_article_data=url.read()
         get_article_response=json.loads(get_article_data)
 
         article_results= None
-        if get_article_response ['articles']:
-            article_results_list= get_article_response['articles']
-            article_results = receive_results(article_results_list)
 
-    return article_results
+        if get_article_response['articles']:
+            article_results_list = get_article_response['articles']
+            article_results = receive_result(article_results_list)
+
+    return article_results        
+
 def receive_result(article_list):
     '''
     Function  that processes the article result and transform them to a list of Objects
@@ -91,16 +93,18 @@ def receive_result(article_list):
     for article in article_list:
         id=article.get('id')
         author=article.get('author')
+        title=article.get('title')
         description=article.get('description')
         url=article.get('url')
         urlToImage=article.get('urlToImage')
         publishedAt=article.get('publishedAt')
-        
+        content=article.get('content')
         
         if author:
-            article_object = Article(id,author,description,url,urlToImage,publishedAt)
+            article_object = Article(id,author,title,description,url,urlToImage,publishedAt,content)
             article_results.append(article_object)  
 
     return article_results 
+
 
 
