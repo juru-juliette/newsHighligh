@@ -21,7 +21,7 @@ def index():
 @main.route('/article/<id>')
 def article():
     '''
-    Shows
+    view root page function that returns the index page and its data
     '''
     news=get_article(id)
     
