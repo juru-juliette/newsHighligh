@@ -19,12 +19,12 @@ def index():
     return render_template('index.html',title=title,general= general,business=Business,sports=Sports,entertainment=Entertainment,technology=Technology)
 
 @main.route('/article/<id>')
-def article():
+def article(id):
     '''
     view root page function that returns the index page and its data
     '''
-    news=get_article(id)
-    
+    article = get_article(id)
+    print(get_article)
     title= "Top HeadLines Articles"
-    return render_template('article.html',title=title, news = news )
+    return render_template('article.html',title=title, article = article )
 

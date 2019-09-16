@@ -7,6 +7,7 @@ from .article import Article
 api_key = None
 # Getting the news base url
 base_url =  None
+article_url = None
 
 # Source=source.Source
 def configure_request(app):
@@ -15,6 +16,7 @@ def configure_request(app):
     print(api_key)
     base_url=app.config['SOURCE_API_BASE_URL']
     article_url=app.config['ARTICLE_API_BASE_URL']
+    print(article_url)
 def get_source(category):
     '''
     Function that gets the json response to url request
@@ -61,6 +63,7 @@ def get_article(id):
     function that gets json request to the url
     '''
     get_article_url = article_url.format(id,api_key)
+    print(get_article_url)
 
     with urllib.request.urlopen(get_article_url)as url:
         get_article_data=url.read()

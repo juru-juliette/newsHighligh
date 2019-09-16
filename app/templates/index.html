@@ -6,6 +6,7 @@
 {{super()}}
 <link rel="stylesheet" href="{{url_for('static',filename='css/index.css')}}">
 {% endblock%}
+<!-- content block -->
 <!DOCTYPE html>
 <html lang="en">
 
@@ -31,7 +32,7 @@
             <div class="col-md-12">
                 <h2>General News</h2>
                 <br>
-                
+
             </div>
             {{macro.displaySourceList(general)}}
 
@@ -70,7 +71,7 @@
         </div>
         {% endblock%}
     </div>
- 
+
     <h1>NEWS</h1>
     <ul>
         {% for source in general %}
@@ -80,7 +81,8 @@
         </h2>
         <li>Id:{{ source.id}}</li>
         <li>Description:{{ source.description}}</li>
-        <li><a href="{{source.url}}">url</a></li> 
+        <li><a href="{{source.url}}">url</a></li>
+        <a href="/article/{{source.id}}">view article</a>
         {% endfor %}
     </ul>
 </body>
