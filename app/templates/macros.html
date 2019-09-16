@@ -6,7 +6,7 @@
         <h3>{{ source.name}}</h3>
     </div>
     <div class="col-md-5">
-        <p>{{source.description|truncate(150)}}</p>
+        <p>{{source.description}}</p>
         <a href="/article/{{source.id}}">Read Article</a>
         <!-- <a href="{{source.url}}">Read Article</a> -->
     </div>
@@ -14,3 +14,4 @@
 </div>
 {% endfor %}
 {% endmacro %}
+
