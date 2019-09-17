@@ -1,11 +1,8 @@
 <!-- <h1> Hello World </h1> -->
-{% extends 'base.html'%}
-{% import 'macros.html' as macro%}
+ {% extends 'base.html'%}
+{% import 'macros.html' as macro%} 
 <!-- style block -->
-{%  block styles %}
-{{super()}}
-<link rel="stylesheet" href="{{url_for('static',filename='css/index.css')}}">
-{% endblock%}
+
 <!-- content block -->
 <!DOCTYPE html>
 <html lang="en">
@@ -36,43 +33,31 @@
             </div>
             {{macro.displaySourceList(general)}}
 
-        </div>
-        <hr>
-        <div class="row" id="first">
+
+            <hr>
+
             <div class="col-md-12">
                 <h2>Business News</h2>
                 <br>
             </div>
             {{macro.displaySourceList(business)}}
-        </div>
-        <hr>
-        <div class="row" id="second">
+
+            <hr>
+
             <div class="col-md-12">
                 <h2>Entertainment News</h2>
                 <br>
             </div>
             {{macro.displaySourceList(entertainment)}}
+
+            <hr>
+
+
+            {% endblock%}
         </div>
-        <hr>
-        <div class="row" id="third">
-            <div class="col-md-12">
-                <h2>Sports News</h2>
-                <br>
-            </div>
-            {{macro.displaySourceList(sport)}}
-        </div>
-        <hr>
-        <div class="row" id="fourth">
-            <div class="col-md-12">
-                <h2>Technology News</h2>
-                <br>
-            </div>
-            {{macro.displaySourceList(tecnology)}}
-        </div>
-        {% endblock%}
     </div>
 
-    <h1>NEWS</h1>
+    <!-- <h1>NEWS</h1>
     <ul>
         {% for source in general %}
         <li>
@@ -84,7 +69,7 @@
         <li><a href="{{source.url}}">url</a></li>
         <a href="{{source.id}}">view article</a>
         {% endfor %}
-    </ul>
+    </ul> -->
 </body>
 
 </html>
